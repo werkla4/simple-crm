@@ -19,7 +19,9 @@ mat-toolbar-row {
 }
 
 .content-container{
-    padding: 16px 48px;
+    padding-top: 16px;
+    padding-left: 48px;
+    padding-right: 48px;
 }
 
 .logo {
@@ -52,7 +54,11 @@ mat-toolbar-row {
         }
 
         &:hover{
-            background-color: rgba(0, 0, 0, 0.1);;
+            background-color: rgba(0, 0, 0, 0.1);
         }
     }
+}
+
+.logo-img{
+    height: 56px;
 }
