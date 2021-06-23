@@ -1,0 +1,33 @@
+<mat-card class="user-header">
+    <button mat-icon-button class="pin-right-top-corner" [matMenuTriggerFor]="userMenu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+
+    <mat-menu #userMenu="matMenu">
+        <button mat-menu-item (click)="editUserDialog()">Edit</button>
+    </mat-menu>
+
+    <img src="./assets/img/profile-blanc-man.png">
+    <div class="user-details-header">
+        <h2>{{ user.firstName }} {{ user.lastName }}</h2><br>
+        {{ user.email }}
+    </div>
+</mat-card>
+
+<mat-card class="mt-32 p-16">
+    <button mat-icon-button class="pin-right-top-corner" [matMenuTriggerFor]="addressMenu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+
+    <mat-menu #addressMenu="matMenu">
+        <button mat-menu-item (click)="editAddressDialog()">Edit</button>
+    </mat-menu>
+
+    <mat-card-title>Address</mat-card-title>
+    <mat-card-content>
+        <p>
+            {{ user.street }}<br>
+            {{ user.zipCode }} {{ user.city }}
+        </p>
+    </mat-card-content>
+</mat-card>

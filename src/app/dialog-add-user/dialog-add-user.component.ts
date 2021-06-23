@@ -10,7 +10,6 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class DialogAddUserComponent implements OnInit {
   user = new User;
-  birthDate: number = -1;
   loading = false;
 
   constructor(private firestore: AngularFirestore, public dialogRef: MatDialogRef<DialogAddUserComponent>) { }
@@ -20,13 +19,11 @@ export class DialogAddUserComponent implements OnInit {
 
   save() {
     this.loading = true;
-    this.birthDate = new Date(this.user.birthDate).getTime();
-    this.user.birthDate = this.birthDate;
+    let birthDate = new Date(this.user.birthDate).getTime();
+    this.user.birthDate = birthDate;
 
     this.firestore.collection('users').add(this.user.toJSON()).then((result) => {
-
       this.loading = false;
-      console.log("added user successfull:", result);
       this.dialogRef.close();
     });
   }

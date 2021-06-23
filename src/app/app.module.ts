@@ -21,13 +21,20 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCardModule } from '@angular/material/card';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
+import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-address.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     UserComponent,
-    DialogAddUserComponent
+    DialogAddUserComponent,
+    UserDetailsComponent,
+    DialogEditUserComponent,
+    DialogEditAddressComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +52,8 @@ import { MatCardModule } from '@angular/material/card';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     MatProgressBarModule,
-    MatCardModule
+    MatCardModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
