@@ -20,16 +20,11 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'simple-crm-app'`, () => {
+  it('sum of 1 and 2', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('simple-crm-app');
-  });
+    expect(app.sum(1,2)).toBe(3);
+    expect(app.sum(1,2)).toBeLessThan(4);
+  })
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('simple-crm-app app is running!');
-  });
 });

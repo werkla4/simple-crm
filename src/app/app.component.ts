@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'simple-crm-app';
+
+  sum(a: number, b: number) {
+        return a + b;
+  }
+
 }
